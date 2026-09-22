@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Urbania - Seguimientos</title>
+</head>
+<body>
+
+<header>
+    <h1>Urbania</h1>
+    <p>Módulo: Seguimientos de cultivo</p>
+    <nav>
+        <ul>
+            <li><a href="menu-administrador.html">Menú Administrador</a></li>
+            <li><a href="menu-encargado.html">Menú Encargado de Huerto</a></li>
+            <li><a href="menu-supervisor.html">Menú Supervisor Agrícola</a></li>
+            <li><a href="login.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <p><strong>Acceso: roles Administrador, Encargado de Huerto y Supervisor Agrícola.</strong></p>
+</header>
+
+<main>
+
+    <section>
+        <h2>Historial de seguimientos</h2>
+        <p>Requisito <cite>RF-23</cite>: consultar el historial de seguimientos de una siembra.</p>
+        <table border="1">
+            <caption>3 seguimientos de ejemplo</caption>
+            <thead><tr><th>ID</th><th>Siembra</th><th>Fecha</th><th>Actividad</th><th>Observaciones</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Siembra 1 &mdash; Jitomate</td><td>20/02/2026</td><td>Riego</td><td>Riego por goteo, sin incidencias.</td></tr>
+                <tr><td>2</td><td>Siembra 1 &mdash; Jitomate</td><td>05/03/2026</td><td>Fertilización</td><td>Aplicación de fertilizante orgánico.</td></tr>
+                <tr><td>3</td><td>Siembra 2 &mdash; Lechuga</td><td>25/02/2026</td><td>Deshierbe</td><td>Deshierbe manual en toda la parcela.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <details>
+        <summary>Registrar seguimiento &mdash; Requisito RF-22</summary>
+        <form>
+            <fieldset>
+                <legend>Nuevo seguimiento</legend>
+                <p>
+                    <label for="siembra">Siembra</label><br>
+                    <select id="siembra" name="siembra_id" required>
+                        <option value="">-- Selecciona --</option>
+                        <option value="1">Siembra 1 &mdash; Jitomate (10/02/2026)</option>
+                        <option value="2">Siembra 2 &mdash; Lechuga (15/02/2026)</option>
+                        <option value="3">Siembra 3 &mdash; Cilantro (01/03/2026)</option>
+                    </select>
+                </p>
+                <p><label for="fecha">Fecha</label><br><input type="date" id="fecha" name="fecha" required></p>
+                <p><label for="actividad">Actividad</label><br><input type="text" id="actividad" name="actividad" placeholder="Riego, poda, fertilización..." required></p>
+                <p><label for="observaciones">Observaciones</label><br><textarea id="observaciones" name="observaciones" rows="3" cols="50" required></textarea></p>
+            </fieldset>
+            <p><button type="submit">Registrar seguimiento</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Actualizar seguimiento &mdash; Requisito RF-24</summary>
+        <form>
+            <p><label for="id-actualizar">ID de seguimiento</label><br><input type="number" id="id-actualizar" name="id" min="1" value="3"></p>
+            <p><label for="actividad-actualizar">Actividad</label><br><input type="text" id="actividad-actualizar" name="actividad" value="Deshierbe"></p>
+            <p><label for="observaciones-actualizar">Observaciones</label><br><textarea id="observaciones-actualizar" name="observaciones" rows="3" cols="50">Deshierbe manual en toda la parcela.</textarea></p>
+            <p><button type="submit">Actualizar seguimiento</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Eliminar seguimiento &mdash; Requisito RF-25</summary>
+        <p>La eliminación es lógica: el seguimiento deja de listarse pero no se borra del sistema.</p>
+        <form>
+            <p>
+                <label for="id-baja">ID de seguimiento</label>
+                <input type="number" id="id-baja" name="id" min="1" value="3">
+                <button type="submit">Eliminar seguimiento</button>
+            </p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Adjuntar evidencia &mdash; Requisito RF-26</summary>
+        <form>
+            <p><label for="id-evidencia">ID de seguimiento</label><br><input type="number" id="id-evidencia" name="id" min="1" value="1"></p>
+            <p><label for="imagen">Imagen del estado del cultivo</label><br><input type="file" id="imagen" name="imagen" accept="image/*"></p>
+            <p><button type="submit">Adjuntar imagen</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Historial de seguimiento en PDF &mdash; Requisito RF-27</summary>
+        <form>
+            <p>
+                <label for="cultivo-pdf">Cultivo</label>
+                <input type="text" id="cultivo-pdf" name="cultivo" value="Jitomate">
+                <button type="submit">Generar historial</button>
+            </p>
+        </form>
+        <p>En este prototipo el documento es un archivo estático de ejemplo:
+        <a href="reporte-ejemplo.pdf" target="_blank">historial-seguimiento.pdf</a>.</p>
+    </details>
+
+    <details>
+        <summary>Total de seguimientos &mdash; Requisito RF-28</summary>
+        <form><p><button type="submit">Calcular total</button></p></form>
+        <table border="1">
+            <tbody><tr><th>Seguimientos realizados</th><td>3</td></tr></tbody>
+        </table>
+    </details>
+
+    <details>
+        <summary>Seguimientos por tipo de actividad &mdash; Requisito RF-29</summary>
+        <p><img src="grafica-seguimientos.png" alt="Gráfica de barras: seguimientos por tipo de actividad" width="480"></p>
+        <p>Seguimientos por tipo de actividad, según los datos de ejemplo de esta página.</p>
+    </details>
+
+</main>
+
+<footer>
+    <p>Urbania &mdash; prototipo de estructura.</p>
+</footer>
+
+</body>
+</html>

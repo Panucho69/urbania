@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Urbania - Bitácora</title>
+</head>
+<body>
+
+<header>
+    <h1>Urbania</h1>
+    <p>Módulo: Bitácora</p>
+    <nav>
+        <ul>
+            <li><a href="menu-administrador.html">Menú Administrador</a></li>
+            <li><a href="menu-supervisor.html">Menú Supervisor Agrícola</a></li>
+            <li><a href="menu-cosecha.html">Menú Responsable de Cosecha</a></li>
+            <li><a href="login.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <p><strong>Acceso: roles Administrador, Supervisor Agrícola y Responsable de Cosecha.</strong></p>
+</header>
+
+<main>
+
+    <section>
+        <h2>Qué registra la bitácora</h2>
+        <p>Requisito <cite>RF-54</cite>: registrar en la bitácora los inicios de sesión, altas,
+        bajas, modificaciones y generación de reportes realizados por los usuarios en cualquier
+        módulo del sistema.</p>
+    </section>
+
+    <section>
+        <h2>Entradas registradas</h2>
+        <p>Requisito <cite>RF-55</cite>: consultar la bitácora de actividades de los usuarios.</p>
+        <table border="1">
+            <caption>5 entradas de ejemplo</caption>
+            <thead><tr><th>Fecha y hora</th><th>Usuario</th><th>Acción</th><th>Detalle</th></tr></thead>
+            <tbody>
+                <tr><td>14/09/2026 09:15</td><td>Admin Urbania</td><td>Inicio de sesión</td><td>El usuario Admin Urbania inició sesión como Administrador.</td></tr>
+                <tr><td>01/03/2026 07:45</td><td>Admin Urbania</td><td>Generación de reporte</td><td>Se generó el reporte PDF de incidencias del periodo 03/2026.</td></tr>
+                <tr><td>10/03/2026 08:00</td><td>Jorge Iván Pérez Santos</td><td>Modificación</td><td>Se actualizó el estado de la incidencia #2 a Atendida.</td></tr>
+                <tr><td>20/04/2026 17:30</td><td>María Fernanda López Cruz</td><td>Alta</td><td>Se registró la cosecha de Lechuga (180 kg).</td></tr>
+                <tr><td>01/03/2026 06:10</td><td>María Fernanda López Cruz</td><td>Alta</td><td>Se registró la siembra de Cilantro en Parcela B1.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <details>
+        <summary>Filtrar bitácora</summary>
+        <form>
+            <p>
+                <label for="usuario">Usuario</label> <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario">
+                <label for="fecha">Fecha</label> <input type="date" id="fecha" name="fecha">
+                <button type="submit">Consultar</button>
+            </p>
+        </form>
+    </details>
+
+</main>
+
+<footer>
+    <p>Urbania &mdash; prototipo de estructura.</p>
+</footer>
+
+</body>
+</html>

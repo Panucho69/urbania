@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Urbania - Incidencias</title>
+</head>
+<body>
+
+<header>
+    <h1>Urbania</h1>
+    <p>Módulo: Incidencias</p>
+    <nav>
+        <ul>
+            <li><a href="menu-administrador.html">Menú Administrador</a></li>
+            <li><a href="menu-supervisor.html">Menú Supervisor Agrícola</a></li>
+            <li><a href="login.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <p><strong>Acceso: roles Administrador y Supervisor Agrícola.</strong></p>
+</header>
+
+<main>
+
+    <section>
+        <h2>Tipos de incidencia registrados</h2>
+        <p>Requisito <cite>RF-35</cite>: consultar los tipos de incidencia registrados.</p>
+        <table border="1">
+            <caption>3 tipos de ejemplo</caption>
+            <thead><tr><th>ID</th><th>Nombre</th><th>Descripción</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Plaga</td><td>Presencia de insectos o plagas en el cultivo.</td></tr>
+                <tr><td>2</td><td>Enfermedad</td><td>Síntomas de enfermedad fúngica o bacteriana.</td></tr>
+                <tr><td>3</td><td>Clima</td><td>Daño por condiciones climáticas adversas.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <details>
+        <summary>Registrar tipo de incidencia &mdash; Requisito RF-34</summary>
+        <form>
+            <p><label for="tipo-nombre">Nombre</label><br><input type="text" id="tipo-nombre" name="nombre" placeholder="Plaga" required></p>
+            <p><label for="tipo-descripcion">Descripción</label><br><textarea id="tipo-descripcion" name="descripcion" rows="3" cols="50" required></textarea></p>
+            <p><button type="submit">Registrar tipo</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Actualizar tipo de incidencia &mdash; Requisito RF-36</summary>
+        <form>
+            <p><label for="tipo-id-actualizar">ID de tipo</label><br><input type="number" id="tipo-id-actualizar" name="id" min="1" value="3"></p>
+            <p><label for="tipo-descripcion-actualizar">Descripción</label><br><textarea id="tipo-descripcion-actualizar" name="descripcion" rows="3" cols="50">Daño por condiciones climáticas adversas.</textarea></p>
+            <p><button type="submit">Actualizar tipo</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Eliminar tipo de incidencia &mdash; Requisito RF-37</summary>
+        <form>
+            <p>
+                <label for="tipo-id-baja">ID de tipo</label>
+                <input type="number" id="tipo-id-baja" name="id" min="1" value="3">
+                <button type="submit">Eliminar tipo</button>
+            </p>
+        </form>
+    </details>
+
+    <section>
+        <h2>Incidencias registradas</h2>
+        <p>Requisito <cite>RF-39</cite>: consultar las incidencias registradas.</p>
+        <table border="1">
+            <caption>2 incidencias de ejemplo</caption>
+            <thead><tr><th>ID</th><th>Tipo</th><th>Cultivo</th><th>Fecha</th><th>Severidad</th><th>Estado</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Plaga</td><td>Jitomate</td><td>02/03/2026</td><td>Media</td><td>Activa</td></tr>
+                <tr><td>2</td><td>Clima</td><td>Lechuga</td><td>10/03/2026</td><td>Alta</td><td>Atendida</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <details>
+        <summary>Registrar incidencia &mdash; Requisito RF-38</summary>
+        <form>
+            <fieldset>
+                <legend>Nueva incidencia</legend>
+                <p>
+                    <label for="inc-tipo">Tipo</label><br>
+                    <select id="inc-tipo" name="tipo_incidencia_id" required>
+                        <option value="">-- Selecciona --</option>
+                        <option value="1">Plaga</option>
+                        <option value="2">Enfermedad</option>
+                        <option value="3">Clima</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="inc-cultivo">Cultivo afectado</label><br>
+                    <select id="inc-cultivo" name="cultivo_id" required>
+                        <option value="">-- Selecciona --</option>
+                        <option value="1">Jitomate</option>
+                        <option value="2">Lechuga</option>
+                        <option value="3">Cilantro</option>
+                    </select>
+                </p>
+                <p><label for="inc-fecha">Fecha</label><br><input type="date" id="inc-fecha" name="fecha" required></p>
+                <p>
+                    Severidad<br>
+                    <label><input type="radio" name="severidad" value="Baja"> Baja</label>
+                    <label><input type="radio" name="severidad" value="Media" checked> Media</label>
+                    <label><input type="radio" name="severidad" value="Alta"> Alta</label>
+                </p>
+                <p><label for="inc-descripcion">Descripción</label><br><textarea id="inc-descripcion" name="descripcion" rows="3" cols="50" required></textarea></p>
+            </fieldset>
+            <p><button type="submit">Registrar incidencia</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Actualizar incidencia &mdash; Requisito RF-40</summary>
+        <form>
+            <p><label for="inc-id-actualizar">ID de incidencia</label><br><input type="number" id="inc-id-actualizar" name="id" min="1" value="1"></p>
+            <p>
+                Estado<br>
+                <label><input type="radio" name="estado" value="Activa" checked> Activa</label>
+                <label><input type="radio" name="estado" value="Atendida"> Atendida</label>
+            </p>
+            <p><label for="inc-descripcion-actualizar">Descripción</label><br><textarea id="inc-descripcion-actualizar" name="descripcion" rows="3" cols="50">Se detectó pulgón en hojas jóvenes.</textarea></p>
+            <p><button type="submit">Actualizar incidencia</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Eliminar incidencia &mdash; Requisito RF-41</summary>
+        <form>
+            <p>
+                <label for="inc-id-baja">ID de incidencia</label>
+                <input type="number" id="inc-id-baja" name="id" min="1" value="1">
+                <button type="submit">Eliminar incidencia</button>
+            </p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Adjuntar evidencia &mdash; Requisito RF-42</summary>
+        <form>
+            <p><label for="inc-id-evidencia">ID de incidencia</label><br><input type="number" id="inc-id-evidencia" name="id" min="1" value="1"></p>
+            <p><label for="inc-imagen">Imagen</label><br><input type="file" id="inc-imagen" name="imagen" accept="image/*"></p>
+            <p><button type="submit">Adjuntar evidencia</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Reporte de incidencias en PDF &mdash; Requisito RF-43</summary>
+        <form>
+            <p>
+                <label for="periodo-inc">Periodo</label>
+                <input type="month" id="periodo-inc" name="periodo" value="2026-03">
+                <button type="submit">Generar reporte</button>
+            </p>
+        </form>
+        <p>En este prototipo el documento es un archivo estático de ejemplo:
+        <a href="reporte-ejemplo.pdf" target="_blank">reporte-incidencias.pdf</a>.</p>
+    </details>
+
+    <details>
+        <summary>Porcentaje de cultivos con incidencias &mdash; Requisito RF-44</summary>
+        <form><p><button type="submit">Calcular porcentaje</button></p></form>
+        <table border="1">
+            <tbody><tr><th>Cultivos con incidencias</th><td>2 de 3 (66.7%)</td></tr></tbody>
+        </table>
+    </details>
+
+    <details>
+        <summary>Incidencias por tipo &mdash; Requisito RF-45</summary>
+        <p><img src="grafica-incidencias.png" alt="Gráfica de barras: incidencias registradas por tipo" width="480"></p>
+        <p>Incidencias por tipo, según los datos de ejemplo de esta página.</p>
+    </details>
+
+</main>
+
+<footer>
+    <p>Urbania &mdash; prototipo de estructura.</p>
+</footer>
+
+</body>
+</html>

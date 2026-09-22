@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Urbania - Inicio</title>
+</head>
+<body>
+
+<header>
+
+    <h1>Urbania</h1>
+     <img src="logo.jpeg" alt="Logotipo de Urbania" width="80">
+    <p>Sistema de gestión agrícola &mdash; prototipo sin hojas de estilo ni JavaScript.</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="login.html">Iniciar sesión</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section>
+        <h2>Qué es Urbania</h2>
+        <p>
+            Urbania administra la información de un sistema de huertos urbanos: huertos, parcelas,
+            cultivos, siembras, seguimientos, incidencias y cosechas, además de la bitácora de
+            actividades y las estadísticas generales.
+        </p>
+        <p>
+            Esta versión es un <cite>prototipo de estructura</cite>: HTML5 puro, sin hoja de estilos,
+            sin JavaScript y sin conexión a una base de datos. Cada módulo del menú es una sola
+            página con datos de ejemplo, pensada únicamente para revisar la navegación y los
+            campos de cada operación.
+        </p>
+        <p>
+            El acceso a los módulos está organizado por rol: para entrar al sistema usa
+            <a href="login.html">Iniciar sesión</a> y selecciona un acceso directo por rol, o
+            <a href="registro.html">Regístrate</a> si aún no tienes cuenta.
+        </p>
+    </section>
+
+    <section>
+        <h2>Roles del sistema</h2>
+        <table border="1">
+            <caption>Cada rol solo ve, al iniciar sesión, el menú con sus módulos permitidos</caption>
+            <thead>
+                <tr><th>Rol</th><th>Alcance</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Control total del sistema: administra usuarios y accede a todos los módulos.</td>
+                </tr>
+                <tr>
+                    <td>Encargado de Huerto</td>
+                    <td>Operación diaria del huerto: huertos, parcelas, cultivos, siembras y su seguimiento.</td>
+                </tr>
+                <tr>
+                    <td>Supervisor Agrícola</td>
+                    <td>Supervisión agrícola: seguimientos, incidencias, cultivos, bitácora y estadísticas.</td>
+                </tr>
+                <tr>
+                    <td>Responsable de Cosecha</td>
+                    <td>Gestión de cosechas: consulta de siembras, registro de cosechas, bitácora y estadísticas.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Módulos del sistema</h2>
+        <p>Referencia informativa; cada módulo solo es accesible desde el menú del rol correspondiente.</p>
+        <dl>
+            <dt>Usuarios</dt>
+            <dd>Inicio y cierre de sesión, alta, consulta, actualización y baja de usuarios. Requisitos RF-01 a RF-06.</dd>
+
+            <dt>Huertos</dt>
+            <dd>Alta, consulta, actualización y baja de huertos. Requisitos RF-07 a RF-10.</dd>
+
+            <dt>Siembras</dt>
+            <dd>Alta y consulta de siembras, ficha en PDF, cálculo de totales y gráfica mensual. Requisitos RF-11 a RF-17.</dd>
+
+            <dt>Parcelas</dt>
+            <dd>Alta de parcelas asociadas a un huerto, consulta, actualización y baja. Requisitos RF-18 a RF-21.</dd>
+
+            <dt>Seguimientos</dt>
+            <dd>Seguimiento de cultivos, evidencias, historial en PDF, total y gráfica de actividades. Requisitos RF-22 a RF-29.</dd>
+
+            <dt>Cultivos</dt>
+            <dd>Alta, consulta, actualización y baja de cultivos. Requisitos RF-30 a RF-33.</dd>
+
+            <dt>Incidencias</dt>
+            <dd>Tipos de incidencia, registro, consulta, actualización, baja, evidencias, reporte y gráfica. Requisitos RF-34 a RF-45.</dd>
+
+            <dt>Cosechas</dt>
+            <dd>Alta, consulta, actualización, baja, evidencia, reporte, rendimiento y producción por cultivo. Requisitos RF-46 a RF-53.</dd>
+
+            <dt>Bitácora</dt>
+            <dd>Registro y consulta de las actividades realizadas por los usuarios. Requisitos RF-54 y RF-55.</dd>
+
+            <dt>Estadísticas</dt>
+            <dd>Consulta de las estadísticas y gráficas generales del sistema. Requisitos RF-56 y RF-57.</dd>
+        </dl>
+    </section>
+
+    <section>
+        <h2>Cómo leer este prototipo</h2>
+        <p>
+            Los formularios no envían información a ningún servidor: muestran los campos que
+            tendría cada operación. Las secciones marcadas con una flecha (<q>Actualizar</q>,
+            <q>Eliminar</q> y similares) se pueden abrir y cerrar; están recogidas por defecto para
+            que la operación principal de cada módulo (alta y consulta) quede primero.
+        </p>
+        <p>
+            Como no hay JavaScript ni servidor, en <a href="login.html">Iniciar sesión</a> el rol
+            no se elige con una lista desplegable separada del botón: cada rol tiene su propio
+            botón de inicio de sesión, y al pulsarlo se simula el resultado de haber entrado con
+            ese rol y se abre el menú correspondiente, que solo enlaza los módulos permitidos
+            para él.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Urbania &mdash; prototipo de estructura. Una sola carpeta, HTML5 puro.</p>
+</footer>
+
+</body>
+</html>

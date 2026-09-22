@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Urbania - Parcelas</title>
+</head>
+<body>
+
+<header>
+    <h1>Urbania</h1>
+    <p>Módulo: Parcelas</p>
+    <nav>
+        <ul>
+            <li><a href="menu-administrador.html">Menú Administrador</a></li>
+            <li><a href="menu-encargado.html">Menú Encargado de Huerto</a></li>
+            <li><a href="login.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <p><strong>Acceso: roles Administrador y Encargado de Huerto.</strong></p>
+</header>
+
+<main>
+
+    <section>
+        <h2>Parcelas registradas</h2>
+        <p>Requisito <cite>RF-19</cite>: consultar las parcelas registradas.</p>
+        <table border="1">
+            <caption>3 parcelas de ejemplo</caption>
+            <thead><tr><th>ID</th><th>Nombre</th><th>Huerto</th><th>Ubicación</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Parcela A1</td><td>Huerto Central</td><td>Sector norte</td></tr>
+                <tr><td>2</td><td>Parcela A2</td><td>Huerto Central</td><td>Sector sur</td></tr>
+                <tr><td>3</td><td>Parcela B1</td><td>Huerto Norte</td><td>Sector poniente</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <details>
+        <summary>Registrar parcela &mdash; Requisito RF-18</summary>
+        <form>
+            <fieldset>
+                <legend>Nueva parcela</legend>
+                <p><label for="nombre">Nombre</label><br><input type="text" id="nombre" name="nombre" placeholder="Parcela A1" required></p>
+                <p>
+                    <label for="huerto">Huerto al que pertenece</label><br>
+                    <select id="huerto" name="huerto_id" required>
+                        <option value="">-- Selecciona --</option>
+                        <option value="1">Huerto Central</option>
+                        <option value="2">Huerto Norte</option>
+                    </select>
+                </p>
+                <p><label for="ubicacion">Ubicación dentro del huerto</label><br><input type="text" id="ubicacion" name="ubicacion" placeholder="Sector norte" required></p>
+            </fieldset>
+            <p><button type="submit">Registrar parcela</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Actualizar parcela &mdash; Requisito RF-20</summary>
+        <form>
+            <p><label for="id-actualizar">ID de parcela</label><br><input type="number" id="id-actualizar" name="id" min="1" value="3"></p>
+            <p><label for="nombre-actualizar">Nombre</label><br><input type="text" id="nombre-actualizar" name="nombre" value="Parcela B1"></p>
+            <p>
+                <label for="huerto-actualizar">Huerto</label><br>
+                <select id="huerto-actualizar" name="huerto_id">
+                    <option value="1">Huerto Central</option>
+                    <option value="2" selected>Huerto Norte</option>
+                </select>
+            </p>
+            <p><label for="ubicacion-actualizar">Ubicación</label><br><input type="text" id="ubicacion-actualizar" name="ubicacion" value="Sector poniente"></p>
+            <p><button type="submit">Actualizar parcela</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Eliminar parcela &mdash; Requisito RF-21</summary>
+        <p>La eliminación es lógica: la parcela deja de listarse pero no se borra del sistema.</p>
+        <form>
+            <p>
+                <label for="id-baja">ID de parcela</label>
+                <input type="number" id="id-baja" name="id" min="1" value="3">
+                <button type="submit">Eliminar parcela</button>
+            </p>
+        </form>
+    </details>
+
+</main>
+
+<footer>
+    <p>Urbania &mdash; prototipo de estructura.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Urbania - Iniciar sesión</title>
+</head>
+<body>
+
+<header>
+    <h1>Urbania</h1>
+    <img src="logo.jpeg" alt="Logotipo de Urbania" width="80">
+    <p>Portal de acceso</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section>
+        <h2>Iniciar sesión</h2>
+        <p>Requisito <cite>RF-01</cite>: iniciar sesión mediante usuario, contraseña y rol.
+        <q>Prototipo: no se valida contraseña real ni se mantiene sesión; el botón de rol que
+        pulses determina a qué menú se entra.</q></p>
+        <form>
+            <fieldset>
+                <legend>Credenciales</legend>
+                <p>
+                    <label for="login-usuario">Usuario (correo electrónico)</label><br>
+                    <input type="email" id="login-usuario" name="usuario" placeholder="admin@urbania.mx" required>
+                </p>
+                <p>
+                    <label for="login-password">Contraseña</label><br>
+                    <input type="password" id="login-password" name="password" required>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Rol &mdash; elige con qué rol inicias sesión</legend>
+                <p>
+                    <button type="submit" formaction="menu-administrador.html">Iniciar sesión como Administrador</button>
+                </p>
+                <p>
+                    <button type="submit" formaction="menu-encargado.html">Iniciar sesión como Encargado de Huerto</button>
+                </p>
+                <p>
+                    <button type="submit" formaction="menu-supervisor.html">Iniciar sesión como Supervisor Agrícola</button>
+                </p>
+                <p>
+                    <button type="submit" formaction="menu-cosecha.html">Iniciar sesión como Responsable de Cosecha</button>
+                </p>
+            </fieldset>
+            <p><button type="reset">Limpiar</button></p>
+        </form>
+    </section>
+
+    <section>
+        <h2>¿No tienes cuenta?</h2>
+        <p><a href="registro.html">Regístrate aquí</a>. Requisito <cite>RF-03</cite>.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Urbania &mdash; prototipo de estructura. Una sola carpeta, HTML5 puro.</p>
+</footer>
+
+</body>
+</html>

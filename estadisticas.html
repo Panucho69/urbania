@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Urbania - Estadísticas</title>
+</head>
+<body>
+
+<header>
+    <h1>Urbania</h1>
+    <p>Módulo: Estadísticas</p>
+    <nav>
+        <ul>
+            <li><a href="menu-administrador.html">Menú Administrador</a></li>
+            <li><a href="menu-supervisor.html">Menú Supervisor Agrícola</a></li>
+            <li><a href="menu-cosecha.html">Menú Responsable de Cosecha</a></li>
+            <li><a href="login.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <p><strong>Acceso: roles Administrador, Supervisor Agrícola y Responsable de Cosecha.</strong></p>
+</header>
+
+<main>
+
+    <section>
+        <h2>Estadísticas generales</h2>
+        <p>Requisito <cite>RF-56</cite>: consultar las cuatro estadísticas del sistema.</p>
+        <form><p><button type="submit">Consultar estadísticas</button></p></form>
+        <table border="1">
+            <caption>Cifras de ejemplo, calculadas sobre los datos que se muestran en cada módulo</caption>
+            <thead><tr><th>Indicador</th><th>Cifra</th></tr></thead>
+            <tbody>
+                <tr><td>Total de siembras</td><td>3</td></tr>
+                <tr><td>Total de cosechas</td><td>2</td></tr>
+                <tr><td>Total de incidencias</td><td>2</td></tr>
+                <tr><td>Total de seguimientos</td><td>3</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Gráficas del sistema</h2>
+        <p>Requisito <cite>RF-57</cite>: consultar las cuatro gráficas del sistema.</p>
+        <form><p><button type="submit">Consultar gráficas</button></p></form>
+
+        <details open>
+            <summary>Siembras por mes</summary>
+            <p><img src="grafica-siembras.png" alt="Gráfica de barras: siembras por mes" width="440"></p>
+        </details>
+
+        <details open>
+            <summary>Seguimientos por tipo de actividad</summary>
+            <p><img src="grafica-seguimientos.png" alt="Gráfica de barras: seguimientos por tipo de actividad" width="440"></p>
+        </details>
+
+        <details open>
+            <summary>Incidencias por tipo</summary>
+            <p><img src="grafica-incidencias.png" alt="Gráfica de barras: incidencias por tipo" width="440"></p>
+        </details>
+
+        <details open>
+            <summary>Producción por cultivo</summary>
+            <p><img src="grafica-produccion.png" alt="Gráfica de barras: producción por cultivo" width="440"></p>
+        </details>
+    </section>
+
+</main>
+
+<footer>
+    <p>Urbania &mdash; prototipo de estructura.</p>
+</footer>
+
+</body>
+</html>

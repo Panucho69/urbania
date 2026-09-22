@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Urbania - Cosechas</title>
+</head>
+<body>
+
+<header>
+    <h1>Urbania</h1>
+    <p>Módulo: Cosechas</p>
+    <nav>
+        <ul>
+            <li><a href="menu-administrador.html">Menú Administrador</a></li>
+            <li><a href="menu-cosecha.html">Menú Responsable de Cosecha</a></li>
+            <li><a href="login.html">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    <p><strong>Acceso: roles Administrador y Responsable de Cosecha.</strong></p>
+</header>
+
+<main>
+
+    <section>
+        <h2>Cosechas registradas</h2>
+        <p>Requisito <cite>RF-47</cite>: consultar las cosechas registradas.</p>
+        <table border="1">
+            <caption>2 cosechas de ejemplo</caption>
+            <thead><tr><th>ID</th><th>Cultivo</th><th>Fecha</th><th>Cantidad (kg)</th><th>Observaciones</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Jitomate</td><td>01/05/2026</td><td>120</td><td>Cosecha completa, buen estado.</td></tr>
+                <tr><td>2</td><td>Lechuga</td><td>20/04/2026</td><td>180</td><td>Cosecha parcial por lluvias.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <details>
+        <summary>Registrar cosecha &mdash; Requisito RF-46</summary>
+        <form>
+            <fieldset>
+                <legend>Nueva cosecha</legend>
+                <p>
+                    <label for="siembra">Siembra</label><br>
+                    <select id="siembra" name="siembra_id" required>
+                        <option value="">-- Selecciona --</option>
+                        <option value="1">Siembra 1 &mdash; Jitomate (10/02/2026)</option>
+                        <option value="2">Siembra 2 &mdash; Lechuga (15/02/2026)</option>
+                        <option value="3">Siembra 3 &mdash; Cilantro (01/03/2026)</option>
+                    </select>
+                </p>
+                <p><label for="fecha">Fecha</label><br><input type="date" id="fecha" name="fecha" required></p>
+                <p><label for="cantidad">Cantidad obtenida (kg)</label><br><input type="number" id="cantidad" name="cantidad_obtenida" min="1" required></p>
+                <p><label for="observaciones">Observaciones</label><br><textarea id="observaciones" name="observaciones" rows="3" cols="50" required></textarea></p>
+            </fieldset>
+            <p><button type="submit">Registrar cosecha</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Actualizar cosecha &mdash; Requisito RF-48</summary>
+        <form>
+            <p><label for="id-actualizar">ID de cosecha</label><br><input type="number" id="id-actualizar" name="id" min="1" value="2"></p>
+            <p><label for="cantidad-actualizar">Cantidad obtenida (kg)</label><br><input type="number" id="cantidad-actualizar" name="cantidad_obtenida" min="1" value="180"></p>
+            <p><label for="observaciones-actualizar">Observaciones</label><br><textarea id="observaciones-actualizar" name="observaciones" rows="3" cols="50">Cosecha parcial por lluvias.</textarea></p>
+            <p><button type="submit">Actualizar cosecha</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Eliminar cosecha &mdash; Requisito RF-49</summary>
+        <p>La eliminación es lógica: la cosecha deja de listarse pero no se borra del sistema.</p>
+        <form>
+            <p>
+                <label for="id-baja">ID de cosecha</label>
+                <input type="number" id="id-baja" name="id" min="1" value="2">
+                <button type="submit">Eliminar cosecha</button>
+            </p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Adjuntar evidencia &mdash; Requisito RF-50</summary>
+        <form>
+            <p><label for="id-evidencia">ID de cosecha</label><br><input type="number" id="id-evidencia" name="id" min="1" value="1"></p>
+            <p><label for="imagen">Imagen de evidencia</label><br><input type="file" id="imagen" name="imagen" accept="image/*"></p>
+            <p><button type="submit">Adjuntar evidencia</button></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Reporte de cosechas en PDF &mdash; Requisito RF-51</summary>
+        <form>
+            <p>
+                <label for="periodo">Periodo</label>
+                <input type="month" id="periodo" name="periodo" value="2026-04">
+                <button type="submit">Generar reporte</button>
+            </p>
+        </form>
+        <p>En este prototipo el documento es un archivo estático de ejemplo:
+        <a href="reporte-ejemplo.pdf" target="_blank">reporte-cosechas.pdf</a>.</p>
+    </details>
+
+    <details>
+        <summary>Rendimiento total &mdash; Requisito RF-52</summary>
+        <form><p><button type="submit">Calcular rendimiento</button></p></form>
+        <table border="1">
+            <tbody><tr><th>Rendimiento total</th><td>300 kg</td></tr></tbody>
+        </table>
+    </details>
+
+    <details>
+        <summary>Producción por cultivo &mdash; Requisito RF-53</summary>
+        <p><img src="grafica-produccion.png" alt="Gráfica de barras: producción obtenida por cultivo" width="480"></p>
+        <p>Producción obtenida por cultivo, según los datos de ejemplo de esta página.</p>
+    </details>
+
+</main>
+
+<footer>
+    <p>Urbania &mdash; prototipo de estructura.</p>
+</footer>
+
+</body>
+</html>
